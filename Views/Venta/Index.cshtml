@@ -1,0 +1,63 @@
+﻿@model IEnumerable<EXFIN.VENTA>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Ventas</h2>
+
+<p>
+    @Html.ActionLink("agregar venta", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_PRODUCTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_PROVEEDOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRECIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CANTIDAD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOTAL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_PRODUCTO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_PROVEEDOR)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PRECIO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CANTIDAD)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TOTAL)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Detalles", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Eliminar", "Delete", new { id = item.ID })
+    </td>
+</tr>
+}
+
+</table>

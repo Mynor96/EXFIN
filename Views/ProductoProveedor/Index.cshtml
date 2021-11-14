@@ -1,0 +1,29 @@
+﻿@model IEnumerable<EXFIN.Models.ProductoProveedoresClass>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+   
+</p>
+<table class="table">
+    <tr>
+        <th>Producto</th>
+        <th>Proveedor</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @item.getproducto.NOMBRE
+    </td>
+    <td>
+        @item.getproveedor.NOMBRE
+    </td>
+</tr>
+}
+
+</table>
